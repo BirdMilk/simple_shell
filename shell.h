@@ -11,7 +11,7 @@
 void _prompt(void);
 void print_stdout(const char *user_input);
 void get_command(char *command, size_t size);
-void exit_shell(void);
+void exit_hsh(void);
 
 
 #endif /* SHELL_H */
