@@ -25,8 +25,11 @@ int main(void)
 
 		_prompt();
 		get_command(command, sizeof(command));
+		if (strcmp(command, "exit\n") == 0)
+		{
+			exit_hsh();
+		}
 		child_pid = fork();
-
 		if (child_pid == -1)
 		{
 			print_stdout("Error in forking process.\n");
