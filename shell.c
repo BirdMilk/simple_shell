@@ -21,9 +21,11 @@ int main(void)
 
 	while (true)
 	{
+		pid_t child_pid;
+
 		_prompt();
 		get_command(command, sizeof(command));
-		pid_t child_pid = fork();
+		child_pid = fork();
 
 		if (child_pid == -1)
 		{
