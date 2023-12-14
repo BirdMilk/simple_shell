@@ -14,5 +14,5 @@
 
 void print_stdout(const char *user_input)
 {
-	`write(STDOUT_FILENO, user_input, strlen(user_input));
+	write(STDOUT_FILENO, user_input, strlen(user_input));
 }
