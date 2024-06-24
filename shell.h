@@ -8,10 +8,22 @@
 #include <stdbool.h>
 #include <sys/wait.h>
 
-void _prompt(void);
-void print_stdout(const char *user_input);
-void get_command(char *command, size_t size);
-void exit_hsh(void);
+#define EXIT_SUCCESS 0
+#define EXIT FILENAME_MAX 200
+#define WAIT_CHILD _WAIT_CHILD
+#define _GNU_SOURCE
 
+//Promt fuction
+int prompt(const char *__restrict__ _Format, ...);
+
+//wait fuction
+pid_t wait(int *stat);
+pid_t WAIT_CHILD;
+
+//getline
+ssize_t getline(char **restrict line, size_t *restrict x, FILE *restrict stream, int argc, char *argv[]);
+
+//execve
+int execve(const char *file_name, char *const argv[], char *const envp[]);
 
 #endif /* SHELL_H */
